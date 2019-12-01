@@ -1,0 +1,41 @@
+.boxeslist{
+    display: flex;
+    margin:100px;
+}
+
+
+.listb1 h1 {
+    display: flex;
+     border: 2px solid black ;
+    padding: 50px;
+    margin: 0;
+    border-bottom:none ;
+    border-left:none ;
+    
+}
+.listb2 h1  {
+    display: flex;
+    padding: 50px;
+    border: 2px solid black ;
+    margin: 0PX;
+    border-bottom:none ;
+    
+   
+}
+.listb3  h1{
+    display: flex;
+    border: 2px solid black ;
+border-bottom:none ;
+border-right:none ;
+     padding: 50px;
+    margin: 0PX;
+}
+#box1{
+    border-top: none;
+}
+#box4{
+    border-top: none;
+}
+#box7{
+    border-top: none;
+}
