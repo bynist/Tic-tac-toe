@@ -1,41 +1,72 @@
+
+@import url('https://fonts.googleapis.com/css?family=Tomorrow|Varela+Round&display=swap');
 .boxeslist{
     display: flex;
+    flex-direction: column;
     margin:100px;
 }
 
+.listb{
+    display: flex;
+}
 
-.listb1 h1 {
-    display: flex;
-     border: 2px solid black ;
-    padding: 50px;
-    margin: 0;
-    border-bottom:none ;
-    border-left:none ;
-    
+#title h1{
+    padding-left:9% ;
+    padding-top:5% ;
+    color: rgb(255, 248, 220);
+    font-size: 40px;
+    font-family: 'Varela Round', sans-serif;
 }
-.listb2 h1  {
-    display: flex;
-    padding: 50px;
-    border: 2px solid black ;
-    margin: 0PX;
-    border-bottom:none ;
+h1{
+    font-size: 50px;
+    color: white;
+   font-family: Comic Sans MS, Comic Sans, cursive; 
+}
+.listb h1 {
+  
+   width: 25%;
+   height: 90px;
+    margin: 0px;
+    border: 2px solid rgb(94, 136, 117) ;
+    text-align: center;
+    padding-top: 20px;
     
+
+    }
+
+body{
    
+    background-image: url(/imgs/bg3.png);
+    background-size:900px 700px ;
+    background-repeat:no-repeat ; 
+
 }
-.listb3  h1{
-    display: flex;
-    border: 2px solid black ;
-border-bottom:none ;
-border-right:none ;
-     padding: 50px;
-    margin: 0PX;
-}
-#box1{
+#\30 {
+    border-left: none;
     border-top: none;
 }
-#box4{
+#\31 {
+    border-top: none;  
+}
+#\32 {
+    border-right: none;
     border-top: none;
 }
-#box7{
-    border-top: none;
+#\33 {
+    border-left: none;
+
+}
+#\35 {
+    border-right: none;
+}
+#\36 {
+    border-left: none;
+    border-bottom: none;
+}
+#\37 {
+    border-bottom: none;
+}
+#\38 {
+    border-right: none;
+    border-bottom: none; 
 }
