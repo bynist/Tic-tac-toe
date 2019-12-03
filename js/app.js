@@ -28,43 +28,56 @@ let winnerPlayes = [] // [0,0,0]
 // let box8= $('#8')
 
 let box =$('.boxeslist div h1')
+let button = $('#button')
+
+   
+
+
 $(function (){
     let countN = 0
     let player1=[]
     let player2=[]
     
     
-            box.on('click',function(event){
+           // box.on('click',function(event){
+            function playGame(event){
                 if(countN <9 ){ // To count number of play
-                    
+                  
                     if (countN %2 == 0){ // 
 
                         $(this).text('X') 
                          player1.push( $(this).attr('id'))
-                    //   console.log("player x : "+player1)
+                   console.log("player x : "+player1)
                            $(this).off('click')
                            // to stopped click again in same box 
                       
-                         countN += 1
-                        } 
-                        else {
+                             countN += 1
+                          } 
+                      else {
 
                             $(this).text('O')
                              player2.push( $(this).attr('id'))
-                            // console.log(player2)
+                            //
+                            
+                            console.log("player O : "+player2)
                            $(this).off('click')
                          
                            countN += 1
                       
-                         }
-                    
-                }
-                
+                                } 
+                        }
+            
                 //call the checkValue function 
+                //play()
                 checkValue(player1,"player X")
                 checkValue(player2,"player O")
-              })    
-           
+          }
+
+                   
+                    $(box).on('click',playGame)
+                
+
+              
 
             function checkValue(player,name){
                 let result = true
@@ -82,23 +95,36 @@ $(function (){
                                     console.log( name+" Winner")
                                    // $(winnerPlayes.attr('id')).css('color','blue')
                                     $(box).off('click')
+
+                                  //  
                                    // return result
                                 }
                             }
                         }/// END SECOND LOOP
                          
                       } /// END FIRST LOOP
+                      
+                  
                      
                 } 
                
             }
 
-
-    
-
-                  
             
-       
+            $(button).on('click',function(){
+             //   alert('')
+            // let cell= $('.listb h1'
+            player1=[]
+            player2=[]
+            countN=0
+            $('.listb h1').html('')
+            $('.listb h1').off('click')
+            $('.listb h1').on('click',playGame)
+            })
+            
+           
+
         
            
- })
+        
+    })
