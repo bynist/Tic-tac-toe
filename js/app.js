@@ -1,8 +1,3 @@
-
-// let player 
-
-
-
 let winnerCond = [
                   ["0","4","8"],
                   ["0","3","6"],
@@ -16,115 +11,116 @@ let winnerCond = [
 
       
 let winnerPlayes = [] // [0,0,0]
-
-// let box0= $('#0')
-// let box1= $('#1')
-// let box2= $('#2')
-// let box3= $('#3')
-// let box4= $('#4')
-// let box5= $('#5')
-// let box6= $('#6')
-// let box7= $('#7')
-// let box8= $('#8')
-
 let box =$('.boxeslist div h1')
 let button = $('#button')
-
-   
-
 
 $(function (){
     let countN = 0
     let player1=[]
     let player2=[]
+    let result = false
     
     
            // box.on('click',function(event){
             function playGame(event){
-                if(countN <9 ){ // To count number of play
-                  
+                
+                     // To count number of play
                     if (countN %2 == 0){ // 
-
-                        $(this).text('X') 
+                        $(this).text('X')
+                        $(this).css("color", "#989c9a") 
                          player1.push( $(this).attr('id'))
-                   console.log("player x : "+player1)
-                           $(this).off('click')
-                           // to stopped click again in same box 
-                      
-                             countN += 1
+                        // console.log("player x : "+player1)
+                         $(this).off('click') // to stopped click again in same box 
+                         countN += 1
+                         checkValue(player1,"player X")
                           } 
                       else {
-
                             $(this).text('O')
+                            $(this).css("color", "#CAA683")
                              player2.push( $(this).attr('id'))
-                            //
-                            
-                            console.log("player O : "+player2)
-                           $(this).off('click')
-                         
-                           countN += 1
-                      
-                                } 
-                        }
+                           //  console.log("player O : "+player2)
+                             $(this).off('click')
+                             countN += 1
+                             checkValue(player2,"player O")
+                           } 
+                           console.log(countN)
             
                 //call the checkValue function 
-                //play()
-                checkValue(player1,"player X")
-                checkValue(player2,"player O")
-          }
-
-                   
-                    $(box).on('click',playGame)
+               // if (let )
                 
-
-              
-
+                
+                //Tie condition 
+                //  }
+                console.log(result)
+                  if ( countN === 9 && result === false){
+                    $('#alldiv > div:nth-child(4)').html(`<h2>
+                    you're Tie
+                   </h2>`         
+                   )
+                }
+            }
+                   
+            $(box).on('click',playGame)// call play function 
+           
             function checkValue(player,name){
-                let result = true
+                
                 if (player.length >= 3){
                     for(let arr of winnerCond){ // FIRST LOOP FOR winnerCond
-                        winnerPlayes = []
-                        result = false
-
-                        for(let arr2 of arr){// SECOND LOOP FOR winnerCond
+                             winnerPlayes = []
+                             result = false
+                         for(let arr2 of arr){// SECOND LOOP FOR winnerCond
+                             
                             if(player.indexOf(arr2) !== -1){
                                 winnerPlayes.push(arr2)
                                 if(winnerPlayes.length >= 3){
                                     result = true
+                                    //winnerPlayes.css('')
                                     console.log("Player games: "+winnerPlayes)
-                                    console.log( name+" Winner")
-                                   // $(winnerPlayes.attr('id')).css('color','blue')
+                                    winnerPlayes = winnerPlayes.map(function(id){ 
+                                        return `#${id}`
+                                    })
+                                   
+                                    $(winnerPlayes.join()).css('color','#597062')
+                                    $('#alldiv > div:nth-child(4)').html(`<h2>
+                                    ${name} winner 
+                                   </h2>`)
+                                  //  console.log('baya')
+                                    // $(winnerPlayes).forEach(function(i)  {
+                                    //    $( winnerPlayes[i]).css('color','red')
+                                        
+                                    // });
                                     $(box).off('click')
-
-                                  //  
-                                   // return result
-                                }
-                            }
-                        }/// END SECOND LOOP
+                                    
+                                     console.log(result)
+                                     return
+                                } 
+                            } 
+                            
+                        } 
+                        /// END SECOND LOOP
                          
-                      } /// END FIRST LOOP
-                      
-                  
-                     
-                } 
+                    } /// END FIRST LOOP
+                   
+                    
+                }  
+
+                }
                
-            }
+            
 
             
             $(button).on('click',function(){
-             //   alert('')
-            // let cell= $('.listb h1'
             player1=[]
             player2=[]
             countN=0
-            $('.listb h1').html('')
-            $('.listb h1').off('click')
-            $('.listb h1').on('click',playGame)
+            $(box).html('')
+            $('#alldiv > div:nth-child(4)').text('')
+            $(box).off('click')
+            $(box).on('click',playGame)
+           
             })
             
-           
-
+       
+        })
         
-           
         
-    })
