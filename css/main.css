@@ -102,7 +102,15 @@ h2{
 
 
 }
-
+#Score{
+    background: white;
+    border-radius: 12px;
+    padding:20px ;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    color:rgb(94, 136, 117);
+    width: 100%;
+}
 
 body{
     background-image: url(../imgs/bg.png);
