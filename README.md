@@ -19,7 +19,7 @@
 [google](http://google.com)
 
 <!-- images -->
-![wireframe]("/imgs/bg3")
+![wireframe]("mgs/bg3")
 <!-- "url:"relative path" -->
 
 --- 
