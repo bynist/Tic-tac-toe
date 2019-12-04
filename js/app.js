@@ -95,7 +95,7 @@ $(function (){
                                     if (name=="player X"){
                                         scoreX+=1
                                        // console.log("scoreX res:" + scoreX)
-                                      $(' #scorexgit ').html(`<h2>
+                                      $(' #scorex ').html(`<h2>
                                       score of X : ${scoreX}  
                                      </h2>`)
                                     }else if (name=="player O"){
