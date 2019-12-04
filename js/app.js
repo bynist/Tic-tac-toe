@@ -13,7 +13,6 @@ let winnerCond = [
 let winnerPlayes = [] // [0,0,0]
 let box =$('.boxeslist div h1')
 let button = $('#button')
-let score=0
 let scoreX=0
 let scoreO=0
 
@@ -23,25 +22,19 @@ $(function (){
     let player2=[]
     let result = false
     
-    
-           // box.on('click',function(event){
-            function playGame(event){
+              const playGame = function(event){
                 
-                     // To count number of play
-                    if (countN %2 == 0){ // 
+                     
+                    if (countN %2 == 0){ // To check who play
                        let scoreX=0
                         $(this).text('X')
-                        $(this).css("color", "#989c9a") 
-                         player1.push( $(this).attr('id'))
-                        // console.log("player x : "+player1)
-                         $(this).off('click') // to stopped click again in same box 
-                         countN += 1
-                       
-                         checkValue(player1,"player X",0)
-                        
-                         
-                          } 
-                      else {
+                        $(this).css("color", "#989c9a") //color of X
+                        player1.push( $(this).attr('id'))
+                        $(this).off('click') // to stopped click again in same box 
+                        countN += 1 //count of click 
+                        checkValue(player1,"player X") //winner check func
+                          
+                    }  else {
                             $(this).text('O')
                             $(this).css("color", "#CAA683")
                              player2.push( $(this).attr('id'))
