@@ -46,14 +46,13 @@ $(function (){
                            console.log(countN)
             
                 //call the checkValue function 
-               // if (let )
+              
                 
                 
                 //Tie condition 
-                //  }
-                console.log(result)
+               // console.log(result)
                   if ( countN === 9 && result === false){
-                    $('#alldiv > div:nth-child(4)').html(`<h2>
+                    $('#alldiv > div.container > div.btns > div:nth-child(2) > h2').html(`<h2>
                     you're Tie
                    </h2>`         
                    )
@@ -81,7 +80,7 @@ $(function (){
                                     })
                                    
                                     $(winnerPlayes.join()).css('color','#597062')
-                                    $('#alldiv > div:nth-child(4)').html(`<h2>
+                                    $('#alldiv > div.container > div.btns > div:nth-child(2)').html(`<h2>
                                     ${name} winner 
                                    </h2>`)
                                   //  console.log('baya')
