@@ -1,4 +1,4 @@
-# project1 < Tic Tac Toe Game>
+# project1 " Tic Tac Toe Game "
 
 
 <!-- ## h2 -->
@@ -14,7 +14,7 @@ The rules of tic tac toe are fairly straightforward. Below is a comprehensive li
 
 
 ## My Project Deployment
-[Tic Tac Toe game]("https://bynist.github.io/Tic-tac-toe/")
+[Tic-Tac-Toe-game]("https://bynist.github.io/Tic-tac-toe/")
 
 ## Technologies used in the project
 * Js 
